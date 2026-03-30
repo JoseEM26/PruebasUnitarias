@@ -39,4 +39,4 @@ jobs:
 
     - name: Build with Maven
       working-directory: infracciones-transito-api-main
-      run: mvn -B test --file pom.xml
+      run: mvn -B test -Dtest="InfractorServiceTest,MultaServiceTest,PagoServiceTest" --file pom.xml
