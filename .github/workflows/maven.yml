@@ -31,10 +31,12 @@ jobs:
         cache: maven
 
     - name: Create .env file for tests
+      working-directory: infracciones-transito-api-main
       run: |
         echo "BD_URL=jdbc:mysql://127.0.0.1:3306/infracciones_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC" > .env
         echo "BD_USERNAME=root" >> .env
         echo "BD_PASSWORD=root" >> .env
 
     - name: Build with Maven
+      working-directory: infracciones-transito-api-main
       run: mvn -B test --file pom.xml
