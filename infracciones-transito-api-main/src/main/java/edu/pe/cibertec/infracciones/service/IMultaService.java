@@ -6,8 +6,12 @@ import java.util.List;
 
 public interface IMultaService {
     MultaResponseDTO registrarMulta(MultaRequestDTO dto);
+
     MultaResponseDTO obtenerMultaPorId(Long id);
+
     List<MultaResponseDTO> obtenerMultasPorInfractor(Long infractorId);
+
     List<MultaResponseDTO> obtenerMultasPorVehiculo(Long vehiculoId);
 
+    void actualizarEstados();
 }

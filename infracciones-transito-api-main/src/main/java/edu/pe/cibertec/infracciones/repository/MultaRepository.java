@@ -7,8 +7,16 @@ import java.util.List;
 
 public interface MultaRepository extends JpaRepository<Multa, Long> {
     List<Multa> findByInfractor_Id(Long infractorId);
+
+    List<Multa> findByInfractorId(Long infractorId);
+
     List<Multa> findByVehiculo_Id(Long vehiculoId);
+
     List<Multa> findByInfractor_IdAndEstado(Long infractorId, EstadoMulta estado);
+
     List<Multa> findByVehiculo_IdAndEstado(Long vehiculoId, EstadoMulta estado);
+
+    List<Multa> findByEstado(EstadoMulta estado);
+
     boolean existsByCodigo(String codigo);
 }
